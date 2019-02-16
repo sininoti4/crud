@@ -1,0 +1,30 @@
+
+<h2>BLOG</h2>
+<div class="row pt-3">
+  <div class="col-md-12">
+    <table class="table table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th>ID</th>
+          <th>title</th>
+          <th>menu</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @sins.each do |sin| %>
+          <tr>
+            <td><%= sin.id %></td>
+            <td><%= link_to sin.title, sin_path(sin) %></td>
+            <td>
+             <%= link_to 'Edit_ ',  edit_sin_path(sin) %>
+             <%= link_to 'Delete', sin_path(sin), method: :delete, data:{ confirm: 'ok ?' } %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="pt-3">
+      <%= link_to '記事追加', new_sin_path %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div>
+  <div class="col-md-8 offset-md-2">
+    <h2 class="text-center">Edit sin</h2>
+    
+     <%= form_with model: @sin, local: true do |f| %>
+      <div class="form-group">
+        <label>title</label>
+        <%= f.text_field :title, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <label>Content</label>
+        <%= f.text_area :content, size: "20x10", class: "form-control" %>
+      </div>
+      <div class="text-center">
+        <%= f.submit "Save", class: "btn btn-secondary" %>
+      </div>
+     <% end %>
+     
+  </div>
+</div>
